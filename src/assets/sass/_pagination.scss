@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+  width: 160px;
+  margin: auto 0 0 0;
+}
+
+/* it will support chrome and firefox */
+.pagination input[type="number"]::-webkit-inner-spin-button,
+.pagination input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.pagination button {
+  padding: 0.5em;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 900;
+  background: white;
+  color: #000;
+  border: 1px solid #000;
+  &.disabled {
+    color: #aaa;
+    border: 1px solid #aaa;
+  }
+}

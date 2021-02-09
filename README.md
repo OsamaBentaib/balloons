@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# Balloon Inc Assignment
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Technologies that I am using in this assignment
+ 
+ ` 
+   - React Typescript
+   - Style with SASS (SCSS)
+   - Fetching APIs with Urql
+   - State managmant with Redux
+   - Icons with react-icons library
+   - Tests with Jest, Enzyme
+ `
+
+
+## Notices
+  - For this project I used only state management `Redux` to navigate inside the application I could use the `react-router` library and do the same thing
+  - I used only `SASS` which `CSS` tooling I could use other frameworks
+  - I didn't have enough time to create more complex tests, but I like to use `Jest` and `Enzyme` for testing my React applications
+
 
 ## Available Scripts
 

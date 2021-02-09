@@ -1,0 +1,15 @@
+.details__close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  background: none;
+  margin: 2em;
+  cursor: pointer;
+  font-size: 0.85em;
+  color: $color-close;
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+}

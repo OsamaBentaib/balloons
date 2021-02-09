@@ -1,0 +1,43 @@
+/* Header */
+.app-header {
+  padding: 2em;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+}
+
+.app-header__title {
+  font-size: 2.8em;
+  font-weight: 900;
+  margin: 0;
+  padding: 0.75em 0;
+  color: $color-link;
+}
+@media screen and (max-width: 40em) {
+  .app-header {
+    padding: 1em 4em;
+  }
+  .app-header__title {
+    font-weight: bold;
+    padding-bottom: 0.25em;
+    text-align: center;
+    font-size: 1.25em;
+  }
+}
+
+.__emoji {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  svg {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
