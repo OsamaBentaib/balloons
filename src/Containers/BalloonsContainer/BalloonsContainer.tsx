@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "urql";
 import { SET_PAGINATION } from "../../store/actionTypes";
-import BalloonItem from "../BalloonItem";
+import BalloonsListContainer from "../BalloonsListContainer/BalloonsListContainer";
 
 // the query schema
 const BalloonsQuery = `
@@ -67,7 +67,7 @@ export default function BalloonsContainer(props: IProps) {
     const pageInfo: PageInfo = data.balloons.pageInfo;
 
     // navigate on the pagination
-    const noNextPrevPage = () => {
+    const onNextPrevPage = () => {
       let before = pageInfo.endCursor;
       let after = pageInfo.startCursor;
       // dispatch the parameters changes
@@ -82,37 +82,11 @@ export default function BalloonsContainer(props: IProps) {
       props.onScroll();
     };
     return (
-      <>
-        {edges?.map((edge: BalloonEdge, index: number) => (
-          <BalloonItem balloon={edge.node} key={index} />
-        ))}
-        {
-          <div className="grid__item">
-            <div className="pagination">
-              <button
-                className={`btn prev ${
-                  !pageInfo.hasPreviousPage ? "disabled" : ""
-                }`}
-                onClick={() => {
-                  if (pageInfo.hasPreviousPage) noNextPrevPage();
-                }}
-              >
-                Prev
-              </button>
-              <button
-                className={`btn next ${
-                  !pageInfo.hasNextPage ? "disabled" : ""
-                }`}
-                onClick={() => {
-                  if (pageInfo.hasNextPage) noNextPrevPage();
-                }}
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        }
-      </>
+      <BalloonsListContainer
+        edges={edges}
+        pageInfo={pageInfo}
+        onNextPrevPage={onNextPrevPage}
+      />
     );
   }
   if (error) {

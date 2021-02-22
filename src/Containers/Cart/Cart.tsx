@@ -76,24 +76,27 @@ export default function Cart() {
                   <div key={i} className="cart__item__grid">
                     <div className="cart__item__image">
                       <img
+                        id={"image--" + i}
                         className="cart__image"
                         src={siteURL + item.balloon.imageUrl}
                         alt={"..."}
                       />
                     </div>
                     <div className="cart__item__details">
-                      <h4>{item.balloon.name}</h4>
-                      <h4>
+                      <h4 className={`name--${i}`}>{item.balloon.name}</h4>
+                      <span className={`cart__item__price--${i}`}>
                         $
                         {item.balloon.price
                           ? item.balloon.price * item.quantity
                           : 0}
-                      </h4>
-                      <small>Quantity: {item.quantity}</small>
+                      </span>
+                      <small className={`cart__item__quantity--${i}`}>
+                        Quantity: {item.quantity}
+                      </small>
                     </div>
                     <div
                       onClick={() => onRemoveFromCart(item)}
-                      className="cart__item__action"
+                      className={`cart__item__action  close--${i}`}
                     >
                       <span>
                         <FiX />

@@ -1,15 +1,18 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { OPEN_DETAILS } from "../../store/actionTypes";
 import { siteURL } from "../../utils";
 
 interface IProps {
   balloon: Balloon;
 }
-export default function BalloonItem(props: IProps) {
+const BalloonItem: React.FC<IProps> = (props: IProps) => {
   const {
     balloon: { id, name, price, imageUrl },
   } = props;
+  const initialState: InitialState | undefined = useSelector(
+    (initialState: InitialState) => initialState
+  );
   // dispatch the changes
   const dispatch = useDispatch<DispatchType>();
 
@@ -30,7 +33,13 @@ export default function BalloonItem(props: IProps) {
     });
   };
   return (
-    <div className="grid__item" id={id} onClick={() => onViewDetails()}>
+    <div
+      className={`grid__item${
+        initialState.balloonDetails.isDetailsOpen ? " isOpen" : ""
+      }`}
+      id={id}
+      onClick={() => onViewDetails()}
+    >
       <div className="product">
         <div className="product__bg"></div>
         <img className="product__img" src={siteURL + imageUrl} alt="...." />
@@ -39,4 +48,5 @@ export default function BalloonItem(props: IProps) {
       </div>
     </div>
   );
-}
+};
+export default BalloonItem;

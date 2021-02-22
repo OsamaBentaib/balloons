@@ -89,7 +89,6 @@ export default function Filter() {
               className={`filter__sort${
                 sort === e ? " active" : ""
               } filter__btn filter__sort--${e.toLowerCase()}`}
-              style={{ background: e.toLowerCase() }}
             >
               {e.toLowerCase()}
             </div>
@@ -111,7 +110,6 @@ export default function Filter() {
                 className={`filter__Variant ${
                   variant === e ? " active" : ""
                 } filter__btn filter__Variant--${e.toLowerCase()}`}
-                style={{ background: e.toLowerCase() }}
               >
                 {e.toLowerCase()}
               </div>
