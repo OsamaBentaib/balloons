@@ -84,12 +84,12 @@ export default function Cart() {
                     </div>
                     <div className="cart__item__details">
                       <h4 className={`name--${i}`}>{item.balloon.name}</h4>
-                      <span className={`cart__item__price--${i}`}>
+                      <h5 className={`cart__item__price--${i}`}>
                         $
                         {item.balloon.price
                           ? item.balloon.price * item.quantity
                           : 0}
-                      </span>
+                      </h5>
                       <small className={`cart__item__quantity--${i}`}>
                         Quantity: {item.quantity}
                       </small>
