@@ -1,6 +1,7 @@
-# Balloon Inc Assignment
-
+# Balloon Inc
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+See the demo [balloons.beosama.com](https://balloons.beosama.com/).
 
 Technologies that I am using in this assignment
 
